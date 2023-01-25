@@ -127,3 +127,12 @@ body {
     margin-bottom: 2rem;
   }
 }
+
+.player-wins {
+  &_background {
+    background-color: green;
+  }
+  &_score {
+    width: 35rem;
+  }
+}

@@ -114,4 +114,11 @@ body {
 }
 .game__score {
   margin-bottom: 2rem;
+}
+
+.player-wins_background {
+  background-color: green;
+}
+.player-wins_score {
+  width: 35rem;
 }/*# sourceMappingURL=main.css.map */
