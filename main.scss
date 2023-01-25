@@ -66,13 +66,13 @@ body {
     background-color: #ccc;
   }
 
-  &_type_again {
+  &_type_reset {
     position: absolute;
     top: 2rem;
     left: 2rem;
   }
 
-  &_type_check {
+  &_type_reset {
     background: none;
     border: 4px solid #eee;
     font-family: inherit;

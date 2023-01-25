@@ -1,24 +1,26 @@
 "use strict";
 
-// Establish Secret Number
+// * Establish Secret Number on load
 const secretNumber = Math.trunc(Math.random() * 20 + 1);
 let dynamicScore = 20;
-document.querySelector(".header__number").textContent = secretNumber;
 
-// Variables
+// * Game Variables
 const body = document.querySelector("body");
-
 const btnCheck = document.querySelector(".btn_type_check");
+const btnReset = document.querySelector(".btn_type_reset");
 const gameNumberInput = document.querySelector(".game__number");
 const gameUserMessage = document.querySelector(".game__message");
 const gameUserScore = document.querySelector(".game__score_span");
 const gameScoreDisplay = document.querySelector(".header__number");
 
+// * Player wins!!!
 function playerWins() {
   body.classList.add("player-wins_background");
   gameScoreDisplay.classList.add("player-wins_score");
+  gameScoreDisplay.textContent = secretNumber;
 }
 
+// * Playing the Game
 function handleNumberCheck() {
   const guess = Number(gameNumberInput.value);
 
@@ -46,3 +48,14 @@ function handleNumberCheck() {
 }
 
 btnCheck.addEventListener("click", handleNumberCheck);
+
+// * Resetting the Game
+function handleGameReset() {
+  body.classList.remove("player-wins_background");
+  gameScoreDisplay.classList.remove("player-wins_score");
+  gameScoreDisplay.textContent = "?";
+  gameUserScore.textContent = "20";
+  gameUserMessage.textContent = "Start guessing...";
+}
+
+btnReset.addEventListener("click", handleGameReset);
