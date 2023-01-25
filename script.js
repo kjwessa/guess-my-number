@@ -3,6 +3,7 @@
 // * Establish Secret Number on load
 const secretNumber = Math.trunc(Math.random() * 20 + 1);
 let dynamicScore = 20;
+let highScore = 0;
 
 // * Game Variables
 const body = document.querySelector("body");
@@ -12,6 +13,7 @@ const gameNumberInput = document.querySelector(".game__number");
 const gameUserMessage = document.querySelector(".game__message");
 const gameUserScore = document.querySelector(".game__score_span");
 const gameScoreDisplay = document.querySelector(".header__number");
+const gameHighScore = document.querySelector(".game__highscore_span");
 
 // * Player wins!!!
 function playerWins() {
@@ -31,6 +33,10 @@ function handleNumberCheck() {
       gameUserMessage.textContent = "Correct Number!";
       dynamicScore++;
       gameUserScore.textContent = dynamicScore;
+      if (dynamicScore > highScore) {
+        highScore = dynamicScore;
+        gameHighScore.textContent = highScore;
+      }
       playerWins();
     } else if (guess > secretNumber) {
       gameUserMessage.textContent = "A little high...try again!";
@@ -48,6 +54,8 @@ function handleNumberCheck() {
 }
 
 btnCheck.addEventListener("click", handleNumberCheck);
+
+// * High Score Functionality
 
 // * Resetting the Game
 function handleGameReset() {
