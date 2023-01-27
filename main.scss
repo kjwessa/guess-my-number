@@ -3,11 +3,13 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
 html {
   font-size: 62.5%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -29,6 +31,8 @@ body {
     width: 100%;
     top: 52%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
 
@@ -49,6 +53,8 @@ body {
     position: absolute;
     bottom: 0;
     left: 50%;
+    -webkit-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
     transform: translate(-50%, 50%);
   }
 }
@@ -89,14 +95,27 @@ body {
 .game {
   height: 65vh;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 
   &__left {
     width: 52rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
